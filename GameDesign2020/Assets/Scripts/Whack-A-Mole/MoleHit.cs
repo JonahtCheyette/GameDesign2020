@@ -12,7 +12,13 @@ public class MoleHit : MonoBehaviour {
             Ray ray = _camera.ScreenPointToRay(Input.mousePosition);
             for (int i = 0; i < handler.cubeBounds.Length; i++) {
                 if(handler.cubeBounds[i].IntersectRay(ray) && !hitSomething) {
-                    handler.cubes[i].SetActive(false);
+                    for (int j = 0; j < 3; j++) {
+                        if (j == 2) {
+                            handler.cubes[i].transform.GetChild(j).gameObject.SetActive(true);
+                        } else {
+                            handler.cubes[i].transform.GetChild(j).gameObject.SetActive(false);
+                        }
+                    }
                     hitSomething = true;
                 }
             }

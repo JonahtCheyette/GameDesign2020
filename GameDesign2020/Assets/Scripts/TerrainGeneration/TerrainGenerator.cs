@@ -84,7 +84,6 @@ public class TerrainGenerator : MonoBehaviour{
             for (int xOffset = -chunksVisibleInViewDist; xOffset <= chunksVisibleInViewDist; xOffset++) {
                 //gets the chunk coordinates of the chunk we're trying to load/make
                 Vector2 viewedChunkCoord = new Vector2(currentChunkCoordX + xOffset, currentChunkCoordY + yOffset);
-                print(viewedChunkCoord.ToString());
                 //check to see if we've already updated the chunk
                 if (!alreadyUpdatedChunkCoords.Contains(viewedChunkCoord)) {
                     //check if we've already created the terrainchunk
